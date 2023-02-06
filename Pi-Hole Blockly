@@ -1,0 +1,306 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id=":*{h`Jt}pmAH4dp[Kp+6">Ausschaltzeit</variable>
+    <variable id="Qp]*t^|13)-::D9CLWy#">Ziel Alexa</variable>
+  </variables>
+  <block type="on_ext" id="wgMR}lqBtASjeE=bY*cf" x="-812" y="-512">
+    <mutation xmlns="http://www.w3.org/1999/xhtml" items="1"></mutation>
+    <field name="CONDITION">any</field>
+    <field name="ACK_CONDITION"></field>
+    <value name="OID0">
+      <shadow type="field_oid" id="otVda2C0pY[rbVC$S*[V">
+        <field name="oid">alexa2.0.History.summary</field>
+      </shadow>
+    </value>
+    <statement name="STATEMENT">
+      <block type="variables_set" id="H?54%=n^1EG%[Z+C4naA">
+        <field name="VAR" id=":*{h`Jt}pmAH4dp[Kp+6">Ausschaltzeit</field>
+        <value name="VALUE">
+          <block type="math_number" id="@F9O9Sz8=tnALldsN7:~">
+            <field name="NUM">30</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="+|O0xmF8kr@,G9-P[2=L">
+            <field name="VAR" id="Qp]*t^|13)-::D9CLWy#">Ziel Alexa</field>
+            <value name="VALUE">
+              <block type="text_join" id="M.,#?S/WD|H9wxjEgbXF">
+                <mutation items="3"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="xInOf)cWtEgLO4ZH=`+N">
+                    <field name="TEXT">alexa2.0.Echo-Devices.</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="get_value_var" id="1A=?G)NJX^r-/5/9:k5(">
+                    <field name="ATTR">val</field>
+                    <value name="OID">
+                      <shadow type="text" id="N:UvU5lgA9OxWwmq5#.C">
+                        <field name="TEXT"></field>
+                      </shadow>
+                      <block type="field_oid" id="m_W/1A*Y|pLKpEx4pTRB">
+                        <field name="oid">alexa2.0.History.serialNumber</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="ADD2">
+                  <block type="text" id="2`;$p]7dnlmx=4/T_!j!">
+                    <field name="TEXT">.Commands.</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id="Xe{2lEQJ{x,jtygT/+~:">
+                <value name="IF0">
+                  <block type="logic_operation" id="+I.er~{ivn7X~(/eR4l5" inline="false">
+                    <field name="OP">AND</field>
+                    <value name="A">
+                      <block type="logic_operation" id="ER/NC2M?G(vg-2KVTGeZ" inline="false">
+                        <field name="OP">OR</field>
+                        <value name="A">
+                          <block type="logic_operation" id="jzw~uTEbbHp_R`|hdD@]" inline="false">
+                            <field name="OP">AND</field>
+                            <value name="A">
+                              <block type="logic_compare" id="kPsJ.`-KBKOidAy-UTRn">
+                                <field name="OP">GTE</field>
+                                <value name="A">
+                                  <block type="text_indexOf" id="CltPg?(58Y}[4!{8eSO+">
+                                    <field name="END">FIRST</field>
+                                    <value name="VALUE">
+                                      <block type="on_source" id="9bUno8:`6^MqvPl;0eqF">
+                                        <field name="ATTR">state.val</field>
+                                      </block>
+                                    </value>
+                                    <value name="FIND">
+                                      <shadow type="text" id="aN#@R=:IpdJiM%=ha;q%">
+                                        <field name="TEXT">pi</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id=",x||/u:E]Bpc}!2#55@t">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="logic_compare" id="8dlgZ)(uu/T__|ZscKMV">
+                                <field name="OP">GTE</field>
+                                <value name="A">
+                                  <block type="text_indexOf" id="UovZG(Quc*@#]w*=)o}2">
+                                    <field name="END">FIRST</field>
+                                    <value name="VALUE">
+                                      <block type="on_source" id="g]i^r:Qa[{O;F{u8V`7%">
+                                        <field name="ATTR">state.val</field>
+                                      </block>
+                                    </value>
+                                    <value name="FIND">
+                                      <shadow type="text" id="lo=q#E;/^LudK?Emg:7)">
+                                        <field name="TEXT">hole</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="@+1Oioq.F/S$8cXTxsGT">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_compare" id=":o|3tGF^Dg$FL]R*?Fag">
+                            <field name="OP">GTE</field>
+                            <value name="A">
+                              <block type="text_indexOf" id="Bb)Q.Zduyh_EG3nbyWcK">
+                                <field name="END">FIRST</field>
+                                <value name="VALUE">
+                                  <block type="on_source" id="RD%+N(E?C.K]]}?(jQNN">
+                                    <field name="ATTR">state.val</field>
+                                  </block>
+                                </value>
+                                <value name="FIND">
+                                  <shadow type="text" id="-9W,F/Bf*$xiyN-L4`hz">
+                                    <field name="TEXT">werbeblocker</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="UoTX;JnbT(x[fm=#4~D/">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="logic_operation" id="o$g_;nSLMV9PM$4C~P$b" inline="false">
+                        <field name="OP">OR</field>
+                        <value name="A">
+                          <block type="logic_compare" id="=31@,w+O]}x,6+k,ww{o">
+                            <field name="OP">GTE</field>
+                            <value name="A">
+                              <block type="text_indexOf" id="{?8E*gG#PNH=-uf@=yBy">
+                                <field name="END">FIRST</field>
+                                <value name="VALUE">
+                                  <block type="on_source" id=":-_pAR60owJeyuKvn?4X">
+                                    <field name="ATTR">state.val</field>
+                                  </block>
+                                </value>
+                                <value name="FIND">
+                                  <shadow type="text" id="1b$e_SM!lfk2Fz+Hsb4]">
+                                    <field name="TEXT">deaktivieren</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="7,R=s$iHWQzT|`=s=1)Y">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_compare" id="tMb*1+TWZKn]o([/4eK6">
+                            <field name="OP">GTE</field>
+                            <value name="A">
+                              <block type="text_indexOf" id="=2}4ID}49Dq[i9$k!ly.">
+                                <field name="END">FIRST</field>
+                                <value name="VALUE">
+                                  <block type="on_source" id="B+!-/}fLv:AO!#NiRhmI">
+                                    <field name="ATTR">state.val</field>
+                                  </block>
+                                </value>
+                                <value name="FIND">
+                                  <shadow type="text" id="gCQLz{w?fO,[f(ZU@_q+">
+                                    <field name="TEXT">ausschalten</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="o{b[[/AV.7Ia$|p~xvAy">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="control" id="*Qpr.2a}KyK8;wZ}Kuc1">
+                    <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                    <field name="OID">pi-hole.0.deactPiHoleTime</field>
+                    <field name="WITH_DELAY">FALSE</field>
+                    <value name="VALUE">
+                      <block type="variables_get" id="Tz(-n-4:a4GRVrS4{jz7">
+                        <field name="VAR" id=":*{h`Jt}pmAH4dp[Kp+6">Ausschaltzeit</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="control_ex" id="$JusHcmwI79c()`xjxJt">
+                        <field name="TYPE">false</field>
+                        <field name="CLEAR_RUNNING">FALSE</field>
+                        <value name="OID">
+                          <shadow type="field_oid">
+                            <field name="oid">Object ID</field>
+                          </shadow>
+                          <block type="text_join" id="bpW3#pOSY+4ZogF_!3AL">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="variables_get" id="JNhleBqzhREUWsxwYr9t">
+                                <field name="VAR" id="Qp]*t^|13)-::D9CLWy#">Ziel Alexa</field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="text" id=";3f`gYPYf|bYvEI|n07c">
+                                <field name="TEXT">deviceStop</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="VALUE">
+                          <shadow type="logic_boolean" id="q[2=?`fOSf}ILY/$`4#V">
+                            <field name="BOOL">TRUE</field>
+                          </shadow>
+                        </value>
+                        <value name="DELAY_MS">
+                          <shadow type="math_number" id="|*o]RvZ~_g=KTUTKHd;2">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="control_ex" id="yRHEg0u/)RC*F([)Hjp,">
+                            <field name="TYPE">false</field>
+                            <field name="CLEAR_RUNNING">FALSE</field>
+                            <value name="OID">
+                              <shadow type="field_oid" id="i#_NpliirZvPy$`ZZ1B4">
+                                <field name="oid">Object ID</field>
+                              </shadow>
+                              <block type="text_join" id="}pzee(={tHtnyMmkiLUw">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="variables_get" id="3=`8LW%/[Xe6p:dl[^%I">
+                                    <field name="VAR" id="Qp]*t^|13)-::D9CLWy#">Ziel Alexa</field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="text" id="?s5tiY*Gv()%erIE#)2f">
+                                    <field name="TEXT">speak</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="VALUE">
+                              <shadow type="logic_boolean" id="4tuvm2tp3;Go_cr12o%5">
+                                <field name="BOOL">TRUE</field>
+                              </shadow>
+                              <block type="text_join" id="J:g#*8hB$brbI_l8CTcz" inline="false">
+                                <mutation items="3"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="[3#$Ki7W)/-f?+8T$*4M">
+                                    <field name="TEXT">Ok, Werbeblocker für</field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="variables_get" id="~}=]/rVOUb487t%K2O%g">
+                                    <field name="VAR" id=":*{h`Jt}pmAH4dp[Kp+6">Ausschaltzeit</field>
+                                  </block>
+                                </value>
+                                <value name="ADD2">
+                                  <block type="text" id="uq;J;|(eB3XO1INBmri.">
+                                    <field name="TEXT">Sekunden deaktiviert.</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="DELAY_MS">
+                              <shadow type="math_number" id="jP9[1j~}|Y7dR}~415]r">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
